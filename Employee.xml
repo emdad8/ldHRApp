@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+<Employee>
+   <FirstName>Pauline   </FirstName>
+   <LastName> H   </LastName>
+   <Division> A1   </Division>
+   <Building> B1   </Building> 
+   <Title>   CC    </Title> 
+   <Room>    501    </Room> 
+</Employee>
+</root>

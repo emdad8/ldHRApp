@@ -1,0 +1,51 @@
+create table Employee(
+
+[EmployeeID] int identity(1,1) not null,
+[FirstName] varchar(50) not null,
+[LastName] varchar(50) not null,
+[Division] varchar(20) null,
+[Building] varchar(50) null,
+[Title] varchar(50) null,
+[Room] varchar(20) null
+
+constraint [pk_Employee] primary key([EmployeeID])
+
+); 
+
+
+
+
+set IDENTITY_INSERT Employee Off;
+
+insert into Employee values ('Emdadul','Haque','SSD','Mirpur',null,null);
+
+select*from Employee;
+
+create procedure getEmployees
+as
+begin
+    select*from Employee
+end
+
+exec getEmployees;
+
+create procedure sp_InsertEmp
+@FirstName varchar(50),
+@LastName varchar(50),
+@Division varchar(20)=null,
+@Building varchar(50)=null,
+@Title varchar(50)=null,
+@Room varchar(20)=null
+as
+begin
+  insert into Employee values (@FirstName,@LastName,@Division,@Building,@Title,@Room) 
+end
+
+create procedure sp_DelEmp
+@EmpId int
+as
+begin
+  delete from Employee where EmployeeID=@EmpId
+end
+
+select*from Employee;
